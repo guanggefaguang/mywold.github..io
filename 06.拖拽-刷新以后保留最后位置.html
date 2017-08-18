@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: deeppink;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    //设置cookie
+    function setCookie(name,value,day) {
+        var d = new Date();
+        d.setDate(d.getDate() + day);
+        document.cookie = name + '=' + value + '; path=/; expires=' + d;
+    }
+
+    //获取cookie
+    function getCookie(name) {
+        var ck = document.cookie;
+        var arr = ck.split(';');
+        for(var i=0;i<arr.length;i++){
+            if(arr[i].indexOf(' ')!=-1) arr[i] = arr[i].substring(1);
+            if(arr[i].indexOf(name)!=-1) return arr[i].substring(arr[i].indexOf('=')+1);
+
+        }
+        return false;
+    }
+
+    //干掉cookie
+    function clearCookie(name) {
+        setCookie(name,'',-1)
+    }
+
+
+    var d = document.getElementById('box');
+    d.onmousedown = function (e) {
+        var ev = e || event;
+        var x = ev.clientX - d.offsetLeft,
+            y = ev.clientY - d.offsetTop;
+
+        document.onmousemove = function (e) {
+            var ev = e || event;
+            var newx = ev.clientX - x,
+                newy = ev.clientY - y;
+            d.style.left = newx + 'px';
+            d.style.top = newy + 'px';
+        }
+        document.onmouseup = function () {
+
+            setCookie('x',d.offsetLeft);
+            setCookie('y',d.offsetTop);
+
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
+
+    window.onload = function () {
+
+    }
+    if(getCookie('x')){
+        d.style.left = getCookie('x') + 'px';
+        d.style.top = getCookie('y') + 'px';
+    }
+
+
+</script>
+</body>
+</html>
