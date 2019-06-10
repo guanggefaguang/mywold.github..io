@@ -1,0 +1,69 @@
+.el-badge__content.is-fixed {
+  top: 6px;
+}
+
+.el-badge__content.is-fixed.is-dot {
+  right: 0px;
+}
+
+body {
+  -background: #e9eef3;
+}
+
+.box-card {
+  margin-top: 20px;
+}
+
+.container-tab .el-tabs__content {
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+
+.el-tooltip__popper, .el-tooltip__popper.is-dark {
+  background: rgba(0, 0, 0, 0.6) !important;
+  /*padding-left: 20px !important;*/
+  /*padding-right: 20px !important;*/
+  /*-webkit-box-sizing: border-box;*/
+  /*-moz-box-sizing: border-box;*/
+  /*box-sizing: border-box;*/
+  max-width: 90% !important;
+}
+
+.el-tooltip__popper[x-placement^=top] .popper__arrow {
+  border-top-color: rgba(0, 0, 0, 0.4);
+}
+
+.el-tooltip__popper[x-placement^=top] .popper__arrow:after {
+  border-top-color: rgba(0, 0, 0, 0.4);
+  /*filter:alpha(opacity=50);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;*/
+}
+
+/*.el-tabs__content {*/
+/*padding: 20px;*/
+/*}*/
+
+.out {
+  padding: 20px;
+  padding-top: 0px;
+}
+.el-button+.el-button{
+  margin-left: 0px;
+}
+.money li .el-tag{
+  padding: 5px 10px;
+  height: auto;
+}
+.el-tabs__header{
+  margin-bottom: 0px;
+}
+.el-pagination{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.el-card__body{
+  padding: 10px;
+}
